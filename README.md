@@ -138,14 +138,14 @@ The network is engineered to handle non-stationary EEG features through hierarch
    - Intermediate outputs from all $K$ levels are preserved in a multi-level stack.
 4. **Multi-Level Skip Concatenation:**
    - Aggregates the base representation, all 5 intermediate block representations, and the original input vector:
-     $$\mathbf{z} = \text{Concat}\left(\mathbf{out}_{\text{base}}, \mathbf{out}_1, \dots, \mathbf{out}_K, \mathbf{inp}\right)$$
+     $$\mathbf{z} = \operatorname{Concat}\left(\mathbf{h}_{\mathrm{base}}, \mathbf{h}_1, \dots, \mathbf{h}_K, \mathbf{x}_{\mathrm{inp}}\right)$$
 5. **Dense Transition & Output:**
    - Dense layer (256 units, ReLU, BatchNorm, Dropout).
    - Dense classification layer with Softmax activation across the target stimulus classes.
 6. **Training Configuration:**
-   - Optimizer: RMSprop ($\text{learning rate} = 10^{-3}$).
+   - Optimizer: RMSprop (learning rate = $10^{-3}$).
    - Loss function: Categorical Cross-Entropy.
-   - Learning rate schedule: `ReduceLROnPlateau` (factor=0.5, patience=5, $\text{min\_lr}=10^{-6}$).
+   - Learning rate schedule: `ReduceLROnPlateau` (`factor = 0.5`, `patience = 5`, `min_lr = 1e-6`).
    - Checkpointing: Best model weights saved based on validation loss.
 
 ---
@@ -243,18 +243,13 @@ Execute the notebooks in sequence or navigate directly to the experiment of inte
 If you use this codebase, framework, or dataset in your research, please cite our paper:
 
 ### APA Format
-> Capria, F., Cicirelli, F., Falcone, A., Guarascio, M., Guerrieri, A., & Rizzo, L. *A Robust Framework for the Classification of Steady-State Visually Evoked Potentials Using a Multi-Level Residual Network*. National Research Council of Italy, Institute for High Performance Computing and Networking (CNR-ICAR).
+> Capria, F., Cicirelli, F., Falcone, A., Guarascio, M., Guerrieri, A., & Rizzo, L. *A Robust Framework for the Classification of Steady-State Visually Evoked Potentials Using a Multi-Level Residual Network*. Internet of Things, 2026. Elsevier.
 
 ### BibTeX
 ```bibtex
 @article{capria2024robust,
   title     = {A Robust Framework for the Classification of Steady-State Visually Evoked Potentials Using a Multi-Level Residual Network},
-  author    = {Capria, Francesco and 
-  						 Cicirelli, Franco and 
-  						 Falcone, Alberto and 
-  						 Guarascio, Massimo and 
-  						 Guerrieri, Antonio and
-               Rizzo, Luigi},
+  author    = {Capria, Francesco and Cicirelli, Franco and Falcone, Alberto and Guarascio, Massimo and Guerrieri, Antonio and Rizzo, Luigi},
   journal   = {Internet of Things - Under Review},
   year      = {2026},
   publisher = {Elsevier}
