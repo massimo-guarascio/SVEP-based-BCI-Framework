@@ -42,6 +42,20 @@ This framework introduces a robust end-to-end BCI pipeline centered on a novel *
 
 ---
 
+## System in Action
+
+Demonstration of the SVEP-based BCI framework during operation:
+
+<div align="center">
+  <video src="assets/SVEP-based-BCI-Framework-in_action.mp4" width="100%" controls>
+    <p>Your browser does not support the video tag. You can view or download the video directly <a href="assets/SVEP-based-BCI-Framework-in_action.mp4">here</a>.</p>
+  </video>
+</div>
+
+> 🎬 **Direct Link:** [`assets/SVEP-based-BCI-Framework-in_action.mp4`](assets/SVEP-based-BCI-Framework-in_action.mp4)
+
+---
+
 ## Repository Structure
 
 ```text
@@ -64,6 +78,8 @@ SVEP-based-BCI-Framework/
 │   ├── Test_4_1.ipynb                   # Adaptation with frozen backbone (softmax fine-tuning only)
 │   ├── Test_4_2.ipynb                   # Adaptation with full Dense layer unfreezing
 │   └── README.txt                       # Domain adaptation & transfer learning methodology
+├── assets/                              # Documentation media, figures & demo recordings
+│   └── SVEP-based-BCI-Framework-in_action.mp4 # Video demonstration of the BCI framework in action
 ├── Raw_Data/                            # Raw EEG recordings from 27 subjects (Bitbrain Diadem)
 │   ├── EEG_Subject_1.csv ... EEG_Subject_27.csv
 ├── PSD_data/                            # Preprocessed PSD feature matrices for all 27 subjects
